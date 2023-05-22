@@ -1,0 +1,47 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+abstract class Maquina {
+  + getPlano(): String
+}
+
+class MaquinaA {
+  - plano: String
+}
+
+class MaquinaC {
+  - plano: String
+}
+
+class MaquinaH {
+  - simularMaquina(plano: String, entrada: String)
+  + seAtasca(maquina: Maquina, entrada: String)
+}
+
+class MaquinaP {
+  + duplicarEntrada(entrada: String): String
+}
+
+class MaquinaN {
+  + negarEntrada(entrada: String): String
+}
+
+class MaquinaX {
+  - maquinaP: MaquinaP
+  - maquinaN: MaquinaN
+  + procesarEntrada(entrada: String): String
+}
+
+Maquina <|-- MaquinaA
+Maquina <|-- MaquinaC
+Maquina <|-- MaquinaH
+Maquina <|-- MaquinaP
+Maquina <|-- MaquinaN
+Maquina <|-- MaquinaX
+
+MaquinaH o--> Maquina
+
+MaquinaX *-- MaquinaP
+MaquinaX *-- MaquinaN
+
+@enduml
