@@ -2,6 +2,7 @@
 
 ## Nota
  Mi Repositorio: https://github.com/Fmejias03/Problema_de_la_parada.git
+ 
  El diagrama en UMl está en la carpeta src
  
  ## Ejercicio
